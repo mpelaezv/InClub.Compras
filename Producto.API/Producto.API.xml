@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Producto.API</name>
+    </assembly>
+    <members>
+        <member name="M:Producto.API.Controllers.ProductoController.CrearProducto(Producto.Application.Commands.CrearProductoCommand)">
+             <summary>
+             Agregar un Producto
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 POST /Producto/AgregarProducto
+                 {
+                     "ProdNombre": "Producto Nuevo",
+                     "ProdUM": 2,
+                     "ProdPrecio": 12.50,
+                     "AuditUsuarioCreacion": 1000
+                 }
+            
+             Alcances de Pruebas:
+             <br /> 
+             (!) En el campo ProdUM se puede usar el valor entero: 1 o 2.
+             <br /> 
+             (!) En el campo AuditUsuarioCreacion puede usar cualquier ID del Listado de Usuarios.
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+        <member name="M:Producto.API.Controllers.ProductoController.ListarProductos">
+            <summary>
+            Obtiene lista de todos los Productos
+            </summary>
+            <remarks>
+            </remarks>
+            <returns>Resultado de Operacion</returns>
+            <response code="200">Listado de Productos</response>
+        </member>
+        <member name="M:Producto.API.Controllers.ProductoController.ModificarProducto(Producto.Application.Commands.ActualizarProductoCommand)">
+             <summary>
+             Actualiza los datos de un Producto
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 PUT /Producto/ActualizarProducto
+                 {
+                     "ID": 0,
+                     "ProdNombre": "string",
+                     "ProdUM": 0,
+                     "ProdPrecio": 0,
+                     "AuditUsuarioUltimaModif": 0
+                 }
+            
+             Alcances de Pruebas:
+             <br /> 
+             (!) En el campo ProdUM se puede usar el valor entero: 1 o 2.
+             <br /> 
+             (!) En el campo AuditUsuarioUltimaModif puede usar cualquier ID del Listado de Usuarios.
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+        <member name="M:Producto.API.Controllers.ProductoController.EliminarProducto(Producto.Application.Commands.EliminarProductoCommand)">
+             <summary>
+             Elimina un Producto
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 DELETE /Producto/EliminarProducto
+                 {
+                     "ProductoID": 1000
+                 }
+            
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+    </members>
+</doc>

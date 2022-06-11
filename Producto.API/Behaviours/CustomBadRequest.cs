@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Producto.API.Attributes;
 using System.Linq;
-using Usuario.API.Attributes;
 
-namespace Usuario.API.Behaviours
+namespace Producto.API.Behaviours
 {
     public class CustomBadRequest : ValidationProblemDetails
     {

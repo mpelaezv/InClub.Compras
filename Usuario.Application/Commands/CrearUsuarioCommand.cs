@@ -47,20 +47,6 @@ namespace Usuario.Application.Commands
                     var result = await connection.ExecuteAsync(sql, bindData(cmd));
                     return "Usuario Creado";
                 }
-                //if (cmd.ID > 0)
-                //{
-                //    var sql = "Update dbo.rders set OrderDetails = @OrderDetails Where OrderId = @OrderId";
-                //    using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
-                //    {
-                //        connection.Open();
-                //        var result = await connection.ExecuteAsync(sql, cmd);
-                //        return "Order Details Updated";
-                //    }
-                //}
-                //else
-                //{
-
-                //}
             }
         }
     }

@@ -2,7 +2,6 @@
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +11,6 @@ namespace Usuario.Application.Commands
 {
     public class ActualizarUsuarioCommand : IRequest<string>
     {
-        [Required]
         public int ID { get; set; }
         public string UsCorreo { get; set; }
         public string UsPass { get; set; }

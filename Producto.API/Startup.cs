@@ -1,16 +1,20 @@
+using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using Producto.API.Behaviours;
+using Producto.API.Filters;
+using Producto.API.Resolvers;
+using Producto.Application;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 
 namespace Producto.API
 {
@@ -26,12 +30,57 @@ namespace Producto.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ///////////////////////////////////////////////////////////////////////////////////////
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                options.SerializerSettings.ContractResolver = new BaseFirstContractResolver();
+            });
+
+            services.AddControllers().ConfigureApiBehaviorOptions(options =>
+            {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+                    var problems = new CustomBadRequest(context);
+
+                    return new BadRequestObjectResult(problems);
+                };
+            });
+
+
+            services.AddApplication();
+
+            var validatorsAssembly = AppDomain.CurrentDomain.Load("Producto.Application");
+
+            services.AddControllers(options => options.Filters.Add<ApiExceptionFilterAttribute>())
+                .AddFluentValidation(config => config.RegisterValidatorsFromAssembly(validatorsAssembly));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+
+            ///////////////////////////////////////////////////////////////////////////////////////
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Producto.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Producto.API",
+                    Version = "v1",
+                    Description = "API para ejecutar las operaciones del Contexto Delimitado: Producto",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Mauro Pelaez",
+                        Email = "mauro.pelaez@hotmail.es",
+                        Url = new Uri("https://www.facebook.com/"),
+                    }
+                });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

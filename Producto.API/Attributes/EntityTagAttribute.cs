@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 
-namespace Usuario.API.Attributes
+namespace Producto.API.Attributes
 {
     public class EntityTagAttribute : Attribute, IActionFilter
     {
