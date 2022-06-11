@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Usuario.API</name>
+    </assembly>
+    <members>
+        <member name="M:Usuario.API.Controllers.UsuarioController.CrearUsuario(Usuario.Application.Commands.CrearUsuarioCommand)">
+             <summary>
+             Crea un Usuario
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 POST /Usuario/RegistrarUsuario
+                 {
+                     "UsCorreo": "nombre@servidorcorreco.com",
+                     "UsPass": "c3p0",
+                     "UsNombre": "Juan",
+                     "UsApellidos": "Perez"
+                 }
+            
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+        <member name="M:Usuario.API.Controllers.UsuarioController.ListarUsuarios">
+            <summary>
+            Obtiene lista de todos los Usuarios
+            </summary>
+            <remarks>
+            </remarks>
+            <returns>Resultado de Operacion</returns>
+            <response code="200">Listado de Usuarios</response>
+        </member>
+        <member name="M:Usuario.API.Controllers.UsuarioController.ModificarUsuario(Usuario.Application.Commands.ActualizarUsuarioCommand)">
+             <summary>
+             Actualiza los datos de un Usuario
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 PUT /Usuario/ActualizarUsuario
+                 {
+                     "ID": 1000,
+                     "UsCorreo": "nombre@servidorcorreco.com",
+                     "UsPass": "07r@c14v3",
+                     "UsNombre": "Juan",
+                     "UsApellidos": "Perez"
+                 }
+            
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+        <member name="M:Usuario.API.Controllers.UsuarioController.EliminarUsuario(Usuario.Application.Commands.EliminarUsuarioCommand)">
+             <summary>
+             Elimina los datos de un Usuario
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 DELETE /Usuario/EliminarUsuario
+                 {
+                     "UsuarioID": 1000
+                 }
+            
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+    </members>
+</doc>
