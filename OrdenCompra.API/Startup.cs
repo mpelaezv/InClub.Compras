@@ -69,7 +69,7 @@ namespace OrdenCompra.API
                     {
                         Name = "Mauro Pelaez",
                         Email = "mauro.pelaez@hotmail.es",
-                        Url = new Uri("https://www.facebook.com/"),
+                        Url = new Uri("https://github.com/mpelaezv/"),
                     }
                 });
 
