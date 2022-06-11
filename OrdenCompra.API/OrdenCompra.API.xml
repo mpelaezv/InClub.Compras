@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrdenCompra.API</name>
+    </assembly>
+    <members>
+        <member name="M:OrdenCompra.API.Controllers.OrdenCompraController.CrearOrdenCompra(OrdenCompra.Application.Commands.CrearOrdenCompraCommand)">
+             <summary>
+             Agregar una Orden de Compra
+             </summary>
+             <remarks>
+             Ejemplo de Request:
+            
+                 POST /OrdenCompra/AgregarOrdenCompra
+                 {
+                     "CompraUsuarioID": 1000,
+                     "AuditUsuarioCreacion": 1000,
+                     "CompraDetalles": [
+                                         {
+                                            "ProductoID": 1001,
+                                            "ItemCant": 7,
+                                            "AuditUsuarioCreacion": 1000
+                                         }
+                                       ]
+                 }
+            
+             Alcances de Pruebas:
+             <br /> 
+             (!) En el campo CompraUsuarioID se puede usar cualquier ID del Listado de Usuarios.
+             <br /> 
+             (!) En el campo AuditUsuarioCreacion puede usar cualquier ID del Listado de Usuarios.
+             <br /> 
+             (!) En el campo ProductoID puede usar cualquier ID del Listado de Productos.
+             <br /> 
+             (!) En el campo ItemCant, es la cantidad deseada del producto, el calculo del precio es interno.
+             </remarks>
+             <param name="command"></param>
+             <returns>Resultado de Operacion</returns>
+             <response code="200">Texto de Confirmacion de Operacion</response>
+             <response code="400">JSON Error Detallado</response>            
+        </member>
+    </members>
+</doc>

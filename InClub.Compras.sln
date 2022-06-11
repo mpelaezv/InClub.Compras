@@ -11,25 +11,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Producto", "Producto", "{32
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrdenCompra", "OrdenCompra", "{C0C69DD9-2926-4608-9CA4-FE6BFE347F0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuario.Domain", "Usuario.Domain\Usuario.Domain.csproj", "{48BA5673-6808-4796-98C2-7700CDBEE564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.Domain", "Usuario.Domain\Usuario.Domain.csproj", "{48BA5673-6808-4796-98C2-7700CDBEE564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuario.Application", "Usuario.Application\Usuario.Application.csproj", "{79C3FA9A-2499-4B47-90D9-3A8D7BF233F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.Application", "Usuario.Application\Usuario.Application.csproj", "{79C3FA9A-2499-4B47-90D9-3A8D7BF233F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuario.API", "Usuario.API\Usuario.API.csproj", "{88E94B18-7DF0-486F-B18B-FB7C4771622F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.API", "Usuario.API\Usuario.API.csproj", "{88E94B18-7DF0-486F-B18B-FB7C4771622F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producto.Domain", "Producto.Domain\Producto.Domain.csproj", "{8399FEE8-041C-4634-AFEB-DFB79A3C4A9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producto.Domain", "Producto.Domain\Producto.Domain.csproj", "{8399FEE8-041C-4634-AFEB-DFB79A3C4A9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producto.Application", "Producto.Application\Producto.Application.csproj", "{3E56BE55-BCDA-4082-8FA6-DECDAB6758C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producto.Application", "Producto.Application\Producto.Application.csproj", "{3E56BE55-BCDA-4082-8FA6-DECDAB6758C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producto.API", "Producto.API\Producto.API.csproj", "{85E69534-0C9B-4A01-B860-0CB9B298A771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producto.API", "Producto.API\Producto.API.csproj", "{85E69534-0C9B-4A01-B860-0CB9B298A771}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdenCompra.Domain", "OrdenCompra.Domain\OrdenCompra.Domain.csproj", "{5A100770-0116-4F06-8EBE-D1984B2606FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdenCompra.Domain", "OrdenCompra.Domain\OrdenCompra.Domain.csproj", "{5A100770-0116-4F06-8EBE-D1984B2606FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdenCompra.Application", "OrdenCompra.Application\OrdenCompra.Application.csproj", "{BA19B152-8B73-4DD2-9CCD-107B174EFBC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdenCompra.Application", "OrdenCompra.Application\OrdenCompra.Application.csproj", "{BA19B152-8B73-4DD2-9CCD-107B174EFBC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdenCompra.API", "OrdenCompra.API\OrdenCompra.API.csproj", "{A442BD58-05A1-4AE2-B0B6-6BF7E05CD5A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdenCompra.API", "OrdenCompra.API\OrdenCompra.API.csproj", "{A442BD58-05A1-4AE2-B0B6-6BF7E05CD5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuario.Infrastructure", "Usuario.Infrastructure\Usuario.Infrastructure.csproj", "{3882E3E0-049E-438C-BDA6-4D34EB6F8D5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.Infrastructure", "Usuario.Infrastructure\Usuario.Infrastructure.csproj", "{3882E3E0-049E-438C-BDA6-4D34EB6F8D5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSSQL.Scripts", "MSSQL.Scripts", "{0FF72C80-BA02-49A6-A630-06326BC71B57}"
+	ProjectSection(SolutionItems) = preProject
+		MSSQL.Scripts\InClub.sql = MSSQL.Scripts\InClub.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
